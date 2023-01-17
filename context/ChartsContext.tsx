@@ -24,7 +24,11 @@ export function ChartContextProvider({ children }: ChartsContextProps) {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   function addNewValue(value: any) {
-    setDataPieChart((oldArray) => [...oldArray, value]);
+    console.log("addNewValue", value);
+    const findObj = pieChartData.findIndex((obj: any) => obj.id === value.id);
+    const newState = [...pieChartData];
+    newState[findObj][value.label] = value.value;
+    setDataPieChart(newState);
   }
 
   return (

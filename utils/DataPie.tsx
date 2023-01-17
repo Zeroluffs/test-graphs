@@ -1,4 +1,4 @@
-export const dataPie =[
+export const dataPie: any[] =[
   {
     id: "python",
     label: "python",
