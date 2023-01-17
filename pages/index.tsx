@@ -1,10 +1,10 @@
 import React from "react";
-import { LineChart } from "view/LineChart";
+import { GraphView } from "view/GraphView";
 
 export default function Home() {
   return (
     <div>
-      <LineChart />
+      <GraphView />
     </div>
   );
 }
