@@ -1,3 +1,4 @@
+import { PieChartDataList } from "components/PieChartDataList";
 import { useState } from "react";
 import { LineChartComponent } from "./LineChart";
 import { PieChartComponent } from "./PieChart";
@@ -31,8 +32,11 @@ export function GraphView() {
   if (showBoth) {
     ShowGraphs = (
       <div className="hidden">
-        <div >
+        <div>
           <PieChartComponent />
+        </div>
+        <div>
+          <PieChartDataList />
         </div>
         <div className="w-[400px] ">
           <LineChartComponent />
@@ -42,15 +46,26 @@ export function GraphView() {
   } else {
     if (showLine) {
       ShowGraphs = (
-        <div className="w-[1000px] m-auto">
-          <LineChartComponent />
+        <div>
+          <div className="w-[1000px] m-auto">
+            <LineChartComponent />
+          </div>
+          <div>
+            <PieChartDataList />
+          </div>
         </div>
       );
     } else {
       if (showPie) {
         ShowGraphs = (
-          <div className="w-[1000px] m-auto">
-            <PieChartComponent />
+          <div>
+            <div className="w-[1000px] m-auto">
+              <PieChartComponent />
+            </div>
+
+            <div>
+              <PieChartDataList />
+            </div>
           </div>
         );
       }
@@ -80,7 +95,6 @@ export function GraphView() {
         </button>
       </div>
       {ShowGraphs}
-
     </div>
   );
 }

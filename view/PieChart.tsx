@@ -35,7 +35,6 @@ export function PieChartComponent() {
   return (
     <div>
       <PieChart chartData={chartData} />
-      <PieChartDataList />
     </div>
   );
 }
