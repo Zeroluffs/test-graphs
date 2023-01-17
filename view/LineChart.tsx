@@ -1,6 +1,6 @@
 import LineChart from "components/LineChart";
 import useChartContext from "context/ChartsContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function LineChartComponent() {
   const { pieChartData } = useChartContext();
@@ -16,6 +16,20 @@ export function LineChartComponent() {
       },
     ],
   });
+  useEffect(() => {
+    setChartData({
+      labels: pieChartData.map((data: any) => data.label),
+      datasets: [
+        {
+          label: "Users",
+          data: pieChartData.map((data: any) => data.value),
+          backgroundColor: pieChartData.map((data: any) => data.color),
+          borderColor: "black",
+          borderWidth: 2,
+        },
+      ],
+    });
+  }, [pieChartData]);
   return (
     <div>
       <LineChart chartData={chartData} />
