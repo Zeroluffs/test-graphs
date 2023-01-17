@@ -4,7 +4,9 @@ import { ChartContextProvider } from "../context/ChartsContext";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChartContextProvider>
-      <Component {...pageProps} />
+      <div className="h-screen bg-slate-300">
+        <Component {...pageProps} />
+      </div>
     </ChartContextProvider>
   );
 }
