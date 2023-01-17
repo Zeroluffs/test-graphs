@@ -6,6 +6,7 @@ import React from "react";
 import useChartContext from "context/ChartsContext";
 import { InlineEditComponent } from "components/InlineEdit";
 import { PieChartDataList } from "components/PieChartDataList";
+import LineChart from "components/LineChart";
 export default function Home() {
   const test = {
     id: "test",
@@ -53,9 +54,14 @@ export default function Home() {
     });
   }, [pieChartData]);
   return (
-    <div className="w-[400px]">
-      <PieChart ref={chartRef} chartData={chartData}  />
-      <PieChartDataList/>
+    <div>
+      <div className="w-[400px]">
+        <PieChart ref={chartRef} chartData={chartData} />
+        <PieChartDataList />
+      </div>
+      <div className="w-[400px]">
+        <LineChart ref={chartRef} chartData={chartData} />
+      </div>
     </div>
   );
 }
