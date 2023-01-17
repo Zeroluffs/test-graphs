@@ -8,6 +8,7 @@ import PieChart from "components/PieChart";
 import { dataPie } from "../utils/DataPie";
 import React from "react";
 import useChartContext from "context/ChartsContext";
+import { InlineEditComponent } from "components/InlineEdit";
 export default function Home() {
   const test = {
     id: "test",
@@ -56,7 +57,7 @@ export default function Home() {
   }, [pieChartData]);
   return (
     <div className="w-[400px]">
-      <button onClick={handleClick}>click me</button>
+      <InlineEditComponent/>
       <PieChart ref={chartRef} chartData={chartData}  />
     </div>
   );
